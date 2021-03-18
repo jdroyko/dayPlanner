@@ -30,10 +30,17 @@ $(document).ready(function () {
     //function Need to set a loop that looks through if the hour is the current hour,
     $('.time-block').each(function () {
         var time = parseInt($(this).attr("id").split("hour-")[1]);
-        console.log(time)
+
 
         if (currentHour > time) {
+            $(this).addClass("past");
+        }
+        else if (currentHour == time) {
+            $(this).addClass("present");
 
+        }
+        else if (currentHour < time) {
+            $(this).addClass("future");
         }
     });
 
